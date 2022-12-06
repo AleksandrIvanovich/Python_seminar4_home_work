@@ -13,7 +13,7 @@ def give_int(input_string:str):
         except:
             print('Попробуйте еще раз. Вы ввели не число')
             
-num = give_int('Введите число:\n') 
+num = give_int('Введите число:\n')           
           
 def get_prime_number (n: int) -> bool:
     for i in range(2,n):
@@ -25,7 +25,11 @@ prime_num_list = []
 for i in range(2,num):
     if not (num % i) and get_prime_number(i) == True:
         prime_num_list.append(i)
+else:  
+    prime_num_list.append(0)
 
-print(f'Cписок простых множителей числа {num}: {prime_num_list}')  
-
-    
+if prime_num_list[0] == 0:
+    print(f'Число {num} делится толко на 1 и на {num}.')
+else:    
+    print(f'Cписок простых множителей числа {num}: {prime_num_list[:-1]}')
+ 
